@@ -1,14 +1,14 @@
 package com.saransh.springpetclinic.map;
 
 import com.saransh.springpetclinic.model.Pet;
-import com.saransh.springpetclinic.services.CrudService;
+import com.saransh.springpetclinic.services.PetService;
 
 import java.util.Set;
 
 /**
  * Created by CryptoSingh1337 on 6/10/2021
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Pet save(Pet object) {

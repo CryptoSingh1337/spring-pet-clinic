@@ -29,12 +29,10 @@ public class DataLoader implements CommandLineRunner {
 
     private void populateOwners() {
         Owner owner1 = new Owner();
-        owner1.setId(1L);
         owner1.setFirstName("Abhishek");
         owner1.setLastName("Sharma");
 
         Owner owner2 = new Owner();
-        owner2.setId(2L);
         owner2.setFirstName("John");
         owner2.setLastName("Doe");
 
@@ -45,12 +43,10 @@ public class DataLoader implements CommandLineRunner {
 
     private void populateVets() {
         Vet vet1 = new Vet();
-        vet1.setId(1L);
         vet1.setFirstName("Micheal");
         vet1.setLastName("Thomson");
 
         Vet vet2 = new Vet();
-        vet2.setId(2L);
         vet2.setFirstName("Benjamin");
         vet2.setLastName("Franklin");
 

@@ -1,7 +1,5 @@
 package com.saransh.springpetclinic.bootstrap;
 
-import com.saransh.springpetclinic.map.OwnerServiceMap;
-import com.saransh.springpetclinic.map.VetServiceMap;
 import com.saransh.springpetclinic.model.Owner;
 import com.saransh.springpetclinic.model.Vet;
 import com.saransh.springpetclinic.services.OwnerService;
@@ -18,9 +16,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

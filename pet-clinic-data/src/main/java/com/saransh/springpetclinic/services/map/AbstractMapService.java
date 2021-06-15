@@ -1,4 +1,4 @@
-package com.saransh.springpetclinic.map;
+package com.saransh.springpetclinic.services.map;
 
 import com.saransh.springpetclinic.model.BaseEntity;
 

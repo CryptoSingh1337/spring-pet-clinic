@@ -1,4 +1,4 @@
-package com.saransh.springpetclinic.map;
+package com.saransh.springpetclinic.services.map;
 
 import com.saransh.springpetclinic.model.Owner;
 import com.saransh.springpetclinic.services.OwnerService;

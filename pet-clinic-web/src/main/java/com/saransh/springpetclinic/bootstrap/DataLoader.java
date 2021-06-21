@@ -1,10 +1,7 @@
 package com.saransh.springpetclinic.bootstrap;
 
 import com.saransh.springpetclinic.model.*;
-import com.saransh.springpetclinic.services.OwnerService;
-import com.saransh.springpetclinic.services.PetTypeService;
-import com.saransh.springpetclinic.services.SpecialityService;
-import com.saransh.springpetclinic.services.VetService;
+import com.saransh.springpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -20,12 +17,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -60,6 +60,11 @@ public class DataLoader implements CommandLineRunner {
         abhishekPet.setBirthDate(LocalDate.now());
         owner1.getPets().add(abhishekPet);
 
+        Visit dogVisit = new Visit();
+        dogVisit.setPet(abhishekPet);
+        dogVisit.setDate(LocalDate.now());
+        dogVisit.setDescription("Sneeze Dog");
+
         Owner owner2 = new Owner();
         owner2.setFirstName("John");
         owner2.setLastName("Doe");
@@ -76,6 +81,8 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner1);
         ownerService.save(owner2);
+
+        visitService.save(dogVisit);
         System.out.println("Owners Loaded...");
     }
 

@@ -1,7 +1,7 @@
 package com.saransh.springpetclinic.services.map;
 
 import com.saransh.springpetclinic.model.Visit;
-import com.saransh.springpetclinic.services.CrudService;
+import com.saransh.springpetclinic.services.VisitService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by CryptoSingh1337 on 6/21/2021
  */
 @Service
-public class VisitMapService extends AbstractMapService<Visit, Long> implements CrudService<Visit, Long> {
+public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
     public Visit save(Visit object) {

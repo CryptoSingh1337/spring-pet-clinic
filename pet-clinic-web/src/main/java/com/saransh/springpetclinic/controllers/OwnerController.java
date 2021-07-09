@@ -37,7 +37,7 @@ public class OwnerController {
                                        Model model) {
         if (owner.getLastName() == null)
             owner.setLastName("");
-        List<Owner> owners = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> owners = ownerService.findAllByLastNameContainingIgnoreCase(owner.getLastName());
         if (owners.isEmpty()) {
             result.rejectValue("lastName", "Not found", "Not found");
             return "owners/findOwners";

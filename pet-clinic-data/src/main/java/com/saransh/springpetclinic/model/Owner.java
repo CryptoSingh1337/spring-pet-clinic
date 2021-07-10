@@ -40,4 +40,19 @@ public class Owner extends Person {
         this.telephone = telephone;
         this.pets = pets;
     }
+
+    public Pet getPet(String name) {
+        return getPet(name, false);
+    }
+
+    public Pet getPet(String name, boolean ignoreNew) {
+        return pets.stream()
+                .filter(pet -> {
+                    if (!pet.isNew() || !ignoreNew) {
+                        if (pet.getName().equalsIgnoreCase(name))
+                            return true;
+                    }
+                    return false;
+                }).findFirst().orElse(null);
+    }
 }
